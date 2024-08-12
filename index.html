@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="lifelines">
+        <button id="audience-poll" onclick="useAudiencePoll()">
+          Audience Poll
+        </button>
+        <button id="fifty-fifty" onclick="useFiftyFifty()">50-50</button>
+        <button id="expert-advice" onclick="useExpertAdvice()">
+          Expert Advice
+        </button>
+      </div>
+      <h1>Kaun Banega Crorepati</h1>
+      <div id="question"></div>
+      <div id="options"></div>
+      <div id="score-container">
+        <span id="score-label"></span>
+        <span id="score">You Won: ₹0</span>
+      </div>
+      <button id="prev">Previous</button>
+      <button id="next">Next</button>
+      <button id="play-again" style="display: none">Play Again</button>
+
+      <div id="money-ladder-container">
+        <div id="money-ladder">
+         <span onclick="handleDrag()" class="puller">&#171;</span>
+          <ul id="ladder">
+          
+            <li data-prize="1,000">₹1,000</li>
+            <li data-prize="5,000">₹5,000</li>
+            <li data-prize="10,000">₹10,000</li>
+            <li data-prize="20,000">₹20,000</li>
+            <li data-prize="40,000">₹40,000</li>
+            <li data-prize="80,000">₹80,000</li>
+            <li data-prize="1,60,000">₹1.6 Lakhs</li>
+            <li data-prize="3,20,000">₹3.2 Lakhs</li>
+            <li data-prize="6,40,000">₹6.4 Lakhs</li>
+            <li data-prize="12,50,000">₹12.5 Lakhs</li>
+            <li data-prize="25,00,000">₹25 Lakhs</li>
+            <li data-prize="50,00,000">₹50 Lakhs</li>
+            <li data-prize="1,00,00,000">₹1 Crore</li>
+            <li data-prize="5,00,00,000">₹5 Crores</li>
+            <li data-prize="7,00,00,000">₹7 Crores</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audience Poll Modal -->
+    <div id="audiencePollModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('audiencePollModal')"
+          >&times;</span
+        >
+        <h2>Audience Poll Results</h2>
+        <ul id="pollResultsList"></ul>
+      </div>
+    </div>
+
+    <!-- Expert Advice Modal -->
+    <div id="expertAdviceModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('expertAdviceModal')"
+          >&times;</span
+        >
+        <h2>Expert Advice</h2>
+        <p id="expertAdviceText"></p>
+      </div>
+    </div>
+
+    <script src="quiz.js"></script>
+  </body>
+</html>

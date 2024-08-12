@@ -38,4 +38,4 @@ kbc-money-ladder/
 ├── index.html          # The main HTML file
 ├── styles.css          # CSS file for styling the game
 ├── script.js           # JavaScript file for game logic
-└── assets/             # Folder for images, sounds, and other assets
+
